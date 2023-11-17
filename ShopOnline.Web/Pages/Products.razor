@@ -1,0 +1,48 @@
+﻿@page "/"
+@inherits ProductsBase
+
+@if (Products == null)
+{
+    <h3>Loading products...</h3>
+}
+else
+{
+    <h3 class="mb-5">Products</h3>
+
+    var productCount = Products.Count();
+
+    @if (productCount > 0)
+    {
+        const int itemsPerRow = 4;
+        var productRowList = new List<ProductDto>();
+
+        @for (int i = 0; i < productCount; i++)
+        {
+            productRowList = Products.Skip(i * itemsPerRow)
+                .Take(itemsPerRow)
+                .ToList();
+
+            <div class="row mt-3">
+                @foreach (var item in productRowList)
+                {
+                    <div class="col-md-3 mb-2">
+                        <a href="#">
+                            <div class="card">
+                                <img class="img-thumbnail" src="@item.ImageURL">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">
+                                        @item.Name
+                                    </h5>
+                                    <p class="card-text">
+                                        <b>@item.Price.ToString("C")</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+
+            </div>
+        }
+    }
+}
