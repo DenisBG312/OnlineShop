@@ -17,6 +17,10 @@ If you have any feedback, please reach out to me at bgdenibg@gmail.com
 [![facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/denis.nedkov.3/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DenisBG312)
 
+## Screenshots
+Here are some shots from the web application
+![App Screenshot](https://i2.paste.pics/PW4VX.png)
+![App Screenshot](https://i2.paste.pics/PW4VU.png)
 
 ## FAQ
 
