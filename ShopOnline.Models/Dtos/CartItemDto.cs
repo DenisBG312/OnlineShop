@@ -17,5 +17,6 @@ namespace ShopOnline.Models.Dtos
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }
         public int Qty { get; set; }
+        public int CartId { get; set; }
     }
 }
