@@ -1,4 +1,6 @@
-﻿namespace ShopOnline.Api.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ShopOnline.Api.Entities
 {
     public class Product
     {

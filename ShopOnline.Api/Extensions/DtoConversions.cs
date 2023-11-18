@@ -20,7 +20,7 @@ namespace ShopOnline.Api.Extensions
                         Price = product.Price,
                         Qty = product.Qty,
                         CategoryId = product.CategoryId,
-                        CategoryName = product.Name
+                        CategoryName = productCategory.Name
                     }).ToList();
         }
     }
