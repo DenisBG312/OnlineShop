@@ -10,6 +10,7 @@ namespace ShopOnline.Web.Services
     public class ShoppingCartService : IShoppingCartService
     {
         private readonly HttpClient httpClient;
+        public event Action<int>? OnShoppingCartChanged;
 
         public ShoppingCartService(HttpClient httpClient)
         {
@@ -69,7 +70,7 @@ namespace ShopOnline.Web.Services
             try
             {
                 var jsonRequest = JsonConvert.SerializeObject(cartItemQtyUpdateDto);
-                var content = new StringContent(jsonRequest,Encoding.UTF8, "application/json-patch+json");
+                var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json-patch+json");
 
                 var response =
                     await httpClient.PatchAsync($"api/ShoppingCart/{cartItemQtyUpdateDto.CartItemId}", content);
@@ -84,6 +85,13 @@ namespace ShopOnline.Web.Services
             catch (Exception)
             {
                 throw;
+            }
+        }
+        public void RaiseEventOnShoppingCartChanged(int totalQty)
+        {
+            if (OnShoppingCartChanged != null)
+            {
+                OnShoppingCartChanged.Invoke(totalQty);
             }
         }
 
